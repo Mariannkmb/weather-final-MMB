@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>JS Debugging</title>
+  </head>
+  <body>
+    <script>
+      function welcomeUser(temperature, firstName) {
+        if (temperature > 15) {
+          alert(`It is a warm day today ${firstName}`);
+        }
+      }
+      // Object with {name:xx , last:yy}, Array with ["x", "y", "z"]
+      let user = {
+        firstName: "Matt",
+        lastName: "Delac",
+      };
+      console.table(user);
+      console.log(user);
+
+      debugger; //stop the code and you can follow waths doing
+      welcomeUser(20, "John");
+    </script>
+  </body>
+</html>
