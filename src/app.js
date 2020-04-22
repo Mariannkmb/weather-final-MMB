@@ -20,6 +20,7 @@ function showTemperature(response) {
   document.querySelector("#wind").innerHTML = response.data.wind.speed;
   document.getElementById("searchButton").placeholder = response.data.name;
   document.querySelector("#city").innerHTML = response.data.name;
+  console.log(response.data.name);
   dayTimeUpdate();
 }
 
