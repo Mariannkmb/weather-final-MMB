@@ -1,4 +1,4 @@
-function getPosition(position) {
+function getLatitudeAndLongitude(position) {
   latitude = position.coords.latitude;
   longitude = position.coords.longitude;
   let apiKey = "b5de5ed43000236f70d3412957f9f340";
@@ -8,6 +8,7 @@ function getPosition(position) {
 
 function showTemperature(response) {
   let tempResult = Math.round(`${response.data.main.temp}`);
+
   document.querySelector("#temperature").innerHTML = `${tempResult}`;
   celcius = tempResult;
   document.querySelector("#weatherDescrip").innerHTML =
@@ -18,21 +19,24 @@ function showTemperature(response) {
   tempMin.innerHTML = `${tempMinRound}`;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = response.data.wind.speed;
-  document.getElementById("searchButton").placeholder = response.data.name;
   document.querySelector("#city").innerHTML = response.data.name;
-  console.log(response.data.name);
+
   dayTimeUpdate();
 }
 
 function dayTimeUpdate() {
   let now = new Date();
+  let dayNumber = now.getDate();
   let day = days[now.getDay()];
+  let month = months[now.getMonth()];
   let hours = now.getHours();
   let min = now.getMinutes();
   if (min < 10) {
     min = "0" + min;
   }
   document.querySelector("#currentDay").innerHTML = `${day}`;
+  document.querySelector("#currentDayNumber").innerHTML = `${dayNumber}`;
+  document.querySelector("#currentMonth").innerHTML = `${month}`;
   document.querySelector("#currentTime").innerHTML = `${hours}:${min} hrs`;
 }
 
@@ -43,14 +47,19 @@ function searchCity(city) {
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
 }
 
+function currentCity() {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(getLatitudeAndLongitude);
+}
+
 function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#searchButton").value;
-  searchCity(city);
-}
-function currentCity() {
-  dayTimeUpdate();
-  navigator.geolocation.getCurrentPosition(getPosition);
+  if (city === "") {
+    currentCity();
+  } else {
+    searchCity(city);
+  }
 }
 
 function fahrenheitUpdate() {
@@ -70,6 +79,21 @@ let celcius;
 let celcius2;
 let fahrenheit;
 
+let months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
 let days = [
   "Sunday",
   "Monday",
@@ -87,7 +111,6 @@ let latitude;
 let longitude;
 
 document.querySelector(".search-box").addEventListener("submit", handleSubmit);
-searchCity("Lisbon");
 
 document.querySelector(".current-box").addEventListener("submit", currentCity);
 
@@ -95,3 +118,5 @@ document
   .querySelector("#fahrenheit")
   .addEventListener("click", fahrenheitUpdate);
 document.querySelector("#celcius").addEventListener("click", celciusUpdate);
+
+searchCity("Lisbon");
