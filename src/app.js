@@ -1,5 +1,4 @@
 function getLatitudeAndLongitude(position) {
-  debugger;
   latitude = position.coords.latitude;
   longitude = position.coords.longitude;
   let apiKey = "b5de5ed43000236f70d3412957f9f340";
@@ -8,7 +7,6 @@ function getLatitudeAndLongitude(position) {
 }
 
 function showTemperature(response) {
-  debugger;
   let tempResult = Math.round(`${response.data.main.temp}`);
 
   document.querySelector("#temperature").innerHTML = `${tempResult}`;
@@ -52,7 +50,6 @@ function searchCity(city) {
 function currentCity() {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(getLatitudeAndLongitude);
-  debugger;
 }
 
 function handleSubmit(event) {
