@@ -117,3 +117,7 @@ h6 {
   font-size: 24px;
   color: #f6c13e;
 }
+#gitHubUrl {
+  display: block;
+  text-align: center;
+}
