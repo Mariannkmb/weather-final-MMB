@@ -1,9 +1,13 @@
 function getPosition(position) {
+  debugger;
+  console.log(position);
   latitude = position.coords.latitude;
   longitude = position.coords.longitude;
   let apiKey = "b5de5ed43000236f70d3412957f9f340";
   let apiUrl = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric`;
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
+  console.log(latitude);
+  console.log(apiUrl);
 }
 
 function showTemperature(response) {
@@ -49,7 +53,6 @@ function handleSubmit(event) {
   searchCity(city);
 }
 function currentCity() {
-  dayTimeUpdate();
   navigator.geolocation.getCurrentPosition(getPosition);
 }
 
@@ -86,10 +89,11 @@ let tempMax = document.querySelector("#tempMax");
 let latitude;
 let longitude;
 
-document.querySelector(".search-box").addEventListener("submit", handleSubmit);
 searchCity("Lisbon");
 
 document.querySelector(".current-box").addEventListener("submit", currentCity);
+
+document.querySelector(".search-box").addEventListener("submit", handleSubmit);
 
 document
   .querySelector("#fahrenheit")
