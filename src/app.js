@@ -87,7 +87,7 @@ let latitude;
 let longitude;
 
 document.querySelector(".search-box").addEventListener("submit", handleSubmit);
-searchCity("Lima");
+searchCity("Lisbon");
 
 document.querySelector(".current-box").addEventListener("submit", currentCity);
 
