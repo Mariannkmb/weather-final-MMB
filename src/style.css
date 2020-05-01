@@ -35,7 +35,8 @@
 #col-temp,
 #city {
   color: green;
-  font-size: 48px;
+  font-size: 38px;
+  font-size: 4vw;
   font-family: "Merriweather", serif;
   display: block;
   text-align: center;
