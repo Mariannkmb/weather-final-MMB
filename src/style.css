@@ -28,18 +28,20 @@
   font-size: 16px;
 }
 
-/* .img-temp {
-  text-align: right;
-} */
+#city {
+  margin-top: 20px;
+}
 
 #col-temp,
+#temperature,
+#metric,
 #city {
   color: green;
-  font-size: 38px;
-  font-size: 4vw;
   font-family: "Merriweather", serif;
-  display: block;
   text-align: center;
+}
+#col-temp {
+  margin-top: 30px;
 }
 #changeMetric {
   display: block;
@@ -49,20 +51,13 @@
 #celcius,
 #fahrenheit,
 #separator {
-  font-size: 24px;
-}
-
-#weatherDescrip {
-  font-size: 17px;
-  color: grey;
-  display: block;
+  font-size: 20px;
 }
 
 #main-data {
-  font-size: 18px;
-  color: rgba(128, 128, 128, 0.719);
-  font-family: Arial, Helvetica, sans-serif;
   padding-left: 20px;
+  padding-top: 15px;
+  line-height: normal;
 }
 
 .rowTodayForecast {
@@ -73,12 +68,17 @@
   font-size: 20px;
   color: green;
 }
-.currentTemperatureLabel {
+.currentTemperatureLabel,
+#main-data,
+#weatherDescrip {
   display: block;
   font-size: 18px;
   color: rgba(128, 128, 128, 0.719);
+}
+.currentTemperatureLabel {
   text-align: center;
 }
+
 .min {
   text-align: right;
 }

@@ -20,7 +20,6 @@ function showTemperature(response) {
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = response.data.wind.speed;
   document.querySelector("#city").innerHTML = response.data.name;
-  console.log(response);
   document
     .querySelector("#weather-icon")
     .setAttribute(

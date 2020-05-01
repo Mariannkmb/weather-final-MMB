@@ -32,6 +32,7 @@
               placeholder="Enter City"
               aria-label="Search"
               id="searchButton"
+              autocomplete="off"
             />
             <button
               class="btn btn-outline-success my-2 my-sm-0"
@@ -51,9 +52,9 @@
             </button>
 
             <p id="time-data">
-              <span id="currentDay"></span>
+              <span id="currentDay"></span> | 
               <span id="currentMonth"></span>
-              <span id="currentDayNumber"></span>
+              <span id="currentDayNumber"></span> | 
               <span id="currentTime"></span>
             </p>
           </form>
@@ -61,17 +62,15 @@
 
         <div class="row">
           <div class="col-4">
-            <p id="main-data">
-                <span id="city"> </span>
+                <h2 id="city"> </h2>
+                <p id="main-data">
                 Humidity: <span id="humidity"></span> %</br>
                 Wind : <span id="wind"></span> meter/sec
             </p>
-           
           </div>
           <div class="col-4" id="col-temp">
             <p>
-              <span id="temperature"></span><span id="metric">˚C</span>
-              <span id="weatherDescrip"></span>
+             <h2><span id="temperature"></span><span id="metric">˚C</span></h2>
               <div id="changeMetric">
               <a href="#" id="celcius">c</a>
               <span id="separator">|</span>
@@ -85,6 +84,7 @@
                           alt=""
                           id="weather-icon"
                         />
+<span id="weatherDescrip"></span>
           </div>
         </div>
 
