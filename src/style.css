@@ -1,3 +1,11 @@
+body {
+  font-family: "Chivo", sans-serif;
+}
+#app-title {
+  color: #48484a;
+  text-align: center;
+  font-size: 30px;
+}
 .weather-forecast-icons {
   width: 100%;
 }
@@ -12,12 +20,6 @@
   border-width: 1px;
 }
 
-.title {
-  font-family: "Merriweather", serif;
-  text-align: center;
-  font-size: 30px;
-}
-
 .rowHeader {
   background-color: #c8e6c9;
   padding: 7px;
@@ -28,7 +30,7 @@
   margin-right: 5px;
 }
 #time-data {
-  padding-top: 10px;
+  margin-top: 6px;
   margin-left: 10px;
   font-size: 16px;
 }
@@ -44,7 +46,6 @@
 #metric,
 #city {
   color: green;
-  font-family: "Merriweather", serif;
 }
 #col-temp,
 #temperature,
@@ -52,11 +53,15 @@
   text-align: center;
 }
 
+#weather-icon {
+  display: block;
+  margin: 0 auto;
+}
+
 .change-metric {
   display: block;
   line-height: 0px;
   font-size: 16px;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 #main-data {
@@ -65,11 +70,9 @@
 }
 
 .rowTodayForecast {
-  margin-top: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 25px;
-  text-align: center;
-  font-size: 20px;
+  margin-top: 28px;
+  line-height: 20px;
+  font-size: 18px;
   color: green;
 }
 .currentTemperatureLabel,
@@ -77,8 +80,9 @@
 #weather-descrip {
   display: block;
   font-size: 16px;
-  color: rgba(128, 128, 128, 0.719);
+  color: #48484a;
 }
+#weather-descrip,
 .currentTemperatureLabel {
   text-align: center;
 }
@@ -90,48 +94,41 @@
   text-align: left;
 }
 
-.rowHeaderForecast {
+.row-header-forecast {
   display: block;
-  font-family: "Merriweather", serif;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin-top: 28px;
   padding-left: 35px;
 }
-#forecast-title {
+#forecast-title,
+h2,
+.weather-forecast-temperature {
   color: #48484a;
 }
 
-h2 {
-  color: rgba(128, 128, 128, 0.719);
-}
 h6 {
-  color: rgba(231, 178, 31, 0.945);
+  color: #ec6e4c;
 }
 
 .rowDetailForecast {
   color: green;
   text-align: center;
-  font-size: 18px;
+  font-size: 15px;
   padding: 2%;
   line-height: 3px;
 }
 
 .weather-forecast-temperature {
-  color: rgba(128, 128, 128, 0.719);
   font-size: 15px;
   text-align: center;
+  white-space: nowrap;
 }
 
-.fas {
-  font-size: 24px;
-  color: #f6c13e;
-}
 #gitHubUrl {
   display: block;
 }
 
 .change-metric .active {
-  color: rgba(128, 128, 128, 0.719);
+  color: #48484a;
   cursor: default;
 }
 .change-metric .active:hover {

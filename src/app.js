@@ -45,7 +45,6 @@ function getLatitudeAndLongitude(position) {
 
 function showTemperature(response) {
   let tempResult = Math.round(`${response.data.main.temp}`);
-  console.log(response);
   document.querySelector("#temperature").innerHTML = `${tempResult}`;
   celcius = tempResult;
   document.querySelector("#metric").innerHTML = "˚C";
@@ -56,7 +55,9 @@ function showTemperature(response) {
   tempMax.innerHTML = `${tempMaxRound}`;
   tempMin.innerHTML = `${tempMinRound}`;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  document.querySelector("#wind").innerHTML = response.data.wind.speed;
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
   document.querySelector("#city").innerHTML = response.data.name;
   document
     .querySelector("#weather-icon")
@@ -153,8 +154,8 @@ let days = [
   "Saturday",
 ];
 
-let tempMin = document.querySelector("#tempMin");
-let tempMax = document.querySelector("#tempMax");
+let tempMin = document.querySelector("#temp-min");
+let tempMax = document.querySelector("#temp-max");
 
 let latitude = null;
 let longitude = null;

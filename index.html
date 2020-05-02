@@ -6,11 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Mariann's Weather App</title>
     <link rel="stylesheet" href="src/style.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Merriweather&display=swap"
-      rel="stylesheet"
-    />
-
+  <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@700&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -23,7 +19,7 @@
     <div class="container">
       <div class="weather-app-wrapper">
       <div class="weather-app">
-        <h1 class="title">Weather</h1>
+        <h1 id="app-title">Weather</h1>
 
         <div class="row rowHeader">
           <form class="form-inline search-box">
@@ -40,7 +36,7 @@
               type="submit"
               id="btn-search"
             >
-              Search
+              Search 
             </button>
           </form>
           <form class="form-inline current-box">
@@ -51,22 +47,20 @@
             >
               Current
             </button>
-
-            <p>
-              <span id="time-data"></span>
-            </p>
+            <div id="time-data">
+            </div>
           </form>
         </div>
 
         <div class="row">
-          <div class="col-4">
+          <div class="col-5">
                 <h2 id="city"> </h2>
                 <p id="main-data">
-                Humidity: <span id="humidity"></span> %</br>
-                Wind : <span id="wind"></span> meter/sec
+                Precipitation:: <span id="humidity"></span> %</br>
+                Wind : <span id="wind"></span> km/hr
             </p>
           </div>
-          <div class="col-4" id="col-temp">
+          <div class="col-2" id="col-temp">
             <p>
              <h2><span id="temperature"></span><span id="metric">˚C</span></h2>
               <div class="change-metric">
@@ -76,7 +70,7 @@
               </div>
             </p>
           </div>
-          <div class="col-3">
+          <div class="col-5">
             <img
                           src="#"
                           alt=""
@@ -87,22 +81,23 @@
         </div>
 
         <div class="row rowTodayForecast">
-          <div class="col-4 min">
-            <span id="tempMin"> </span>
+          <div class="col-1"></div>
+          <div class="col-2 min">
+            <span id="temp-min"> </span>
             <span> ˚C min</span>
           </div>
-          <div class="col-4">
+          <div class="col-6">
             <h3 class="currentTemperatureLabel">
-                ⬅   Current   ➡ Temperature
+                <img src="images/caret-left-solid.svg" width="12" height="auto">   Current Temperature <img src="images/caret-right-solid.svg" width="12" height="auto">
             </h3>
           </div>
-          <div class="col-4 max">
-            <span id="tempMax"> </span>
+          <div class="col-2" id=col-max>
+            <span id="temp-max"> </span>
             <span>˚C max</span>
           </div>
           <div class="col-1"></div>
         </div>
-        <div class="row rowHeaderForecast">
+        <div class="row row-header-forecast">
           <h3 id="forecast-title">Forecast</h3>
           <h6>Next hours</h6>
         </div>
