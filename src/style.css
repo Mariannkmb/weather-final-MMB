@@ -18,6 +18,9 @@ body {
   padding: 15px;
   border-radius: 10px;
   border-width: 1px;
+  /* background-image: url(../images/clouds-background-png-8.png);
+  background-repeat: no-repeat;
+  background-position: bottom; */
 }
 
 .rowHeader {
@@ -130,6 +133,7 @@ h6 {
 .change-metric .active {
   color: #48484a;
   cursor: default;
+  display: inline-block;
 }
 .change-metric .active:hover {
   text-decoration: none;

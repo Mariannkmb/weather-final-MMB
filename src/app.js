@@ -80,22 +80,37 @@ function showForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = null;
   let forecast = null;
+  let varDate = response.data.list[0].dt_txt.substring(0, 10);
+  let varTempMax = response.data.list[0].main.temp_max;
+  let varTempMin = response.data.list[0].main.temp_min;
 
-  for (let index = 0; index < 6; index++) {
+  for (let index = 0; index < 40; index++) {
     forecast = response.data.list[index];
-    forecastElement.innerHTML += `
-  <div class="col-2">
-      ${formatHour(forecast.dt * 1000)}
-      <img src="http://openweathermap.org/img/wn/${
-        forecast.weather[0].icon
-      }@2x.png" class="weather-forecast-icons">
-      <div class="weather-forecast-temperature">
-      <strong >${Math.round(forecast.main.temp_max)}˚</strong> ${Math.round(
-      forecast.main.temp_min
-    )}˚ 
+    if (varDate === forecast.dt_txt.substring(0, 10)) {
+      if (varTempMax < forecast.main.temp_max) {
+        varTempMax = forecast.main.temp_max;
+      }
+      if (varTempMin > forecast.main.temp_min) {
+        varTempMin = forecast.main.temp_min;
+      }
+    } else {
+      forecastElement.innerHTML += `
+      <div class="col" style="width: 24%">
+          ${months[varDate.substring(6, 7) - 1]}-${varDate.substring(8, 10)}
+          <img src="http://openweathermap.org/img/wn/${
+            forecast.weather[0].icon
+          }@2x.png" class="weather-forecast-icons">
+          <div class="weather-forecast-temperature">
+          <strong >${Math.round(varTempMax)}˚</strong> ${Math.round(
+        varTempMin
+      )}˚
+          </div>
       </div>
-  </div>
- `;
+     `;
+      varDate = forecast.dt_txt.substring(0, 10);
+      varTempMax = forecast.main.temp_max;
+      varTempMin = forecast.main.temp_min;
+    }
   }
 }
 
@@ -130,18 +145,18 @@ let celcius = null;
 let fahrenheit = null;
 
 let months = [
-  "January",
-  "February",
-  "March",
-  "April",
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
   "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
 ];
 
 let days = [
