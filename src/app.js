@@ -11,6 +11,7 @@ function showTemperature(response) {
 
   document.querySelector("#temperature").innerHTML = `${tempResult}`;
   celcius = tempResult;
+  document.querySelector("#metric").innerHTML = "˚C";
   document.querySelector("#weatherDescrip").innerHTML =
     response.data.weather[0].description;
   let tempMaxRound = Math.round(response.data.main.temp_max);
@@ -74,22 +75,25 @@ function handleSubmit(event) {
   }
 }
 
-function fahrenheitUpdate() {
+function fahrenheitUpdate(event) {
+  event.preventDefault();
   fahrenheit = (celcius * 9) / 5 + 32;
   fahrenheit = Math.round(fahrenheit);
+  document.querySelector("#celcius").classList.remove("active");
+  document.querySelector("#fahrenheit").classList.add("active");
   document.querySelector("#temperature").innerHTML = `${fahrenheit}`;
   document.querySelector("#metric").innerHTML = "˚F";
 }
-function celciusUpdate() {
-  celcius2 = ((fahrenheit - 32) * 5) / 9;
-  celcius2 = Math.round(celcius);
-  document.querySelector("#temperature").innerHTML = `${celcius2}`;
+function celciusUpdate(event) {
+  event.preventDefault();
+  document.querySelector("#fahrenheit").classList.remove("active");
+  document.querySelector("#celcius").classList.add("active");
+  document.querySelector("#temperature").innerHTML = `${celcius}`;
   document.querySelector("#metric").innerHTML = "˚C";
 }
 
-let celcius;
-let celcius2;
-let fahrenheit;
+let celcius = null;
+let fahrenheit = null;
 
 let months = [
   "January",

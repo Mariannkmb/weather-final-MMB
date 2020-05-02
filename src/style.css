@@ -30,6 +30,7 @@
 
 #city {
   margin-top: 20px;
+  padding-left: 20px;
 }
 
 #col-temp,
@@ -38,20 +39,21 @@
 #city {
   color: green;
   font-family: "Merriweather", serif;
+}
+#col-temp,
+#temperature,
+#metric {
   text-align: center;
 }
+
 #col-temp {
   margin-top: 30px;
 }
-#changeMetric {
+.change-metric {
   display: block;
   line-height: 0px;
-}
-
-#celcius,
-#fahrenheit,
-#separator {
-  font-size: 20px;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #main-data {
@@ -121,4 +123,12 @@ h6 {
 #gitHubUrl {
   display: block;
   text-align: center;
+}
+
+.change-metric .active {
+  color: grey;
+  cursor: default;
+}
+.change-metric .active:hover {
+  text-decoration: none;
 }
