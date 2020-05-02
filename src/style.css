@@ -1,10 +1,15 @@
+.weather-forecast-icons {
+  width: 100%;
+}
+.weather-app-wrapper {
+  max-width: 600px;
+  margin: 20px auto;
+}
 .weather-app {
   border: 1px solid #dadde1;
   padding: 15px;
-  margin: 20px auto;
   border-radius: 10px;
   border-width: 1px;
-  max-width: 620px;
 }
 
 .title {
@@ -31,6 +36,7 @@
 #city {
   margin-top: 20px;
   padding-left: 20px;
+  margin-bottom: 0px;
 }
 
 #col-temp,
@@ -46,9 +52,6 @@
   text-align: center;
 }
 
-#col-temp {
-  margin-top: 30px;
-}
 .change-metric {
   display: block;
   line-height: 0px;
@@ -58,7 +61,6 @@
 
 #main-data {
   padding-left: 20px;
-  padding-top: 15px;
   line-height: normal;
 }
 
@@ -72,9 +74,9 @@
 }
 .currentTemperatureLabel,
 #main-data,
-#weatherDescrip {
+#weather-descrip {
   display: block;
-  font-size: 18px;
+  font-size: 16px;
   color: rgba(128, 128, 128, 0.719);
 }
 .currentTemperatureLabel {
@@ -93,11 +95,14 @@
   font-family: "Merriweather", serif;
   margin-top: 20px;
   margin-bottom: 10px;
-  padding-left: 20px;
+  padding-left: 35px;
+}
+#forecast-title {
+  color: #48484a;
 }
 
 h2 {
-  color: grey;
+  color: rgba(128, 128, 128, 0.719);
 }
 h6 {
   color: rgba(231, 178, 31, 0.945);
@@ -108,25 +113,25 @@ h6 {
   text-align: center;
   font-size: 18px;
   padding: 2%;
+  line-height: 3px;
 }
 
-.rowDetailForecast span {
-  color: grey;
-  display: block;
+.weather-forecast-temperature {
+  color: rgba(128, 128, 128, 0.719);
   font-size: 15px;
   text-align: center;
 }
+
 .fas {
   font-size: 24px;
   color: #f6c13e;
 }
 #gitHubUrl {
   display: block;
-  text-align: center;
 }
 
 .change-metric .active {
-  color: grey;
+  color: rgba(128, 128, 128, 0.719);
   cursor: default;
 }
 .change-metric .active:hover {
