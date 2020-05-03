@@ -50,6 +50,7 @@ function showTemperature(response) {
   document.querySelector("#metric").innerHTML = "˚C";
   document.querySelector("#weather-descrip").innerHTML =
     response.data.weather[0].description;
+  document.querySelector("#searchButton").value = ``;
   let tempMaxRound = Math.round(response.data.main.temp_max);
   let tempMinRound = Math.round(response.data.main.temp_min);
   tempMax.innerHTML = `${tempMaxRound}`;

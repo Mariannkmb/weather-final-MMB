@@ -18,7 +18,7 @@
   <body>
     <div class="container">
       <div class="weather-app-wrapper">
-      <div class="weather-app">
+      <div class="weather-app" id="weather-background">
         <h1 id="app-title">Weather</h1>
 
         <div class="row rowHeader">
@@ -32,7 +32,7 @@
               autocomplete="off"
             />
             <button
-              class="btn btn-outline-success my-2 my-sm-0"
+              class="btn btn-outline-secondary my-2 my-sm-0"
               type="submit"
               id="btn-search"
             >
@@ -41,7 +41,7 @@
           </form>
           <form class="form-inline current-box">
             <button
-              class="btn btn-outline-secondary my-2 my-sm-0"
+              class="btn btn-outline-light my-2 my-sm-0"
               type="submit"
               id="btn-current"
             >
@@ -52,11 +52,11 @@
           </form>
         </div>
 
-        <div class="row">
+        <div class="row principal">
           <div class="col-5">
                 <h2 id="city"> </h2>
                 <p id="main-data">
-                Precipitation:: <span id="humidity"></span> %</br>
+                Precipitation: <span id="humidity"></span> %</br>
                 Wind : <span id="wind"></span> km/hr
             </p>
           </div>

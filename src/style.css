@@ -1,8 +1,10 @@
 body {
   font-family: "Chivo", sans-serif;
+  text-shadow: #48484a36 1px 1px;
 }
 #app-title {
-  color: #48484a;
+  color: #ffff;
+  text-shadow: 2px 2px 2px #48484a9a;
   text-align: center;
   font-size: 30px;
 }
@@ -18,20 +20,21 @@ body {
   padding: 15px;
   border-radius: 10px;
   border-width: 1px;
-  /* background-image: url(../images/clouds-background-png-8.png);
+  background-image: url(../images/clouds.png);
+  background-size: 600px;
   background-repeat: no-repeat;
-  background-position: bottom; */
+  background-position: top;
 }
 
 .rowHeader {
-  background-color: #c8e6c9;
-  padding: 7px;
-  margin-bottom: 20px;
+  background-color: rgba(68, 130, 192, 0.274);
+  padding-left: 15px;
 }
 
 #btn-search {
   margin-right: 5px;
 }
+
 #time-data {
   margin-top: 6px;
   margin-left: 10px;
@@ -39,7 +42,7 @@ body {
 }
 
 #city {
-  margin-top: 20px;
+  margin-top: 25px;
   padding-left: 20px;
   margin-bottom: 0px;
 }
@@ -47,13 +50,16 @@ body {
 #col-temp,
 #temperature,
 #metric,
-#city {
-  color: green;
+#city,
+.rowTodayForecast,
+.rowDetailForecast {
+  color: #3382ea;
 }
 #col-temp,
 #temperature,
 #metric {
   text-align: center;
+  padding-top: 40px;
 }
 
 #weather-icon {
@@ -69,6 +75,7 @@ body {
 
 #main-data {
   padding-left: 20px;
+  padding-top: 20px;
   line-height: normal;
 }
 
@@ -76,7 +83,6 @@ body {
   margin-top: 28px;
   line-height: 20px;
   font-size: 18px;
-  color: green;
 }
 .currentTemperatureLabel,
 #main-data,
@@ -113,7 +119,6 @@ h6 {
 }
 
 .rowDetailForecast {
-  color: green;
   text-align: center;
   font-size: 15px;
   padding: 2%;
