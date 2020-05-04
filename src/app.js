@@ -96,7 +96,7 @@ function showForecast(response) {
       }
     } else {
       forecastElement.innerHTML += `
-      <div class="col w-24">
+      <div class="col" style="width: 20%">
          <div class="forecast-date"> ${
            months[varDate.substring(6, 7) - 1]
          }-${varDate.substring(8, 10)} </div>
