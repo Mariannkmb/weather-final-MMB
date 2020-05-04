@@ -19,7 +19,7 @@ function formatDate(timestamp) {
   let day = days[now.getDay()];
   let month = months[now.getMonth()];
 
-  return `${day} ${dayNumber} ${month} | ${formatHour(timestamp)} `;
+  return `${day} ${month} ${dayNumber} | ${formatHour(timestamp)} hrs `;
 }
 
 function formatHour(timestamp) {
