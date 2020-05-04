@@ -96,8 +96,10 @@ function showForecast(response) {
       }
     } else {
       forecastElement.innerHTML += `
-      <div class="col" style="width: 24%">
-          ${months[varDate.substring(6, 7) - 1]}-${varDate.substring(8, 10)}
+      <div class="col" style="max-width: 24%">
+         <div class="forecast-date"> ${
+           months[varDate.substring(6, 7) - 1]
+         }-${varDate.substring(8, 10)} </div>
           <img src="http://openweathermap.org/img/wn/${
             forecast.weather[0].icon
           }@2x.png" class="weather-forecast-icons">
