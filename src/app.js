@@ -39,7 +39,7 @@ function getLatitudeAndLongitude(position) {
   latitude = position.coords.latitude;
   longitude = position.coords.longitude;
   let apiKey = "b5de5ed43000236f70d3412957f9f340";
-  let apiUrl = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric`;
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
 }
 
@@ -64,13 +64,13 @@ function showTemperature(response) {
     .querySelector("#weather-icon")
     .setAttribute(
       "src",
-      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+      `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
   document
     .querySelector("#weather-icon")
     .setAttribute(
       "alt",
-      `http://openweathermap.org/img/wn/${response.data.weather[0].description}@2x.png`
+      `https://openweathermap.org/img/wn/${response.data.weather[0].description}@2x.png`
     );
   document.querySelector("#time-data").innerHTML = `${formatDate(
     response.data.dt * 1000
@@ -100,7 +100,7 @@ function showForecast(response) {
          <div class="forecast-date"> ${
            months[varDate.substring(6, 7) - 1]
          } ${varDate.substring(8, 10)} </div>
-          <img src="http://openweathermap.org/img/wn/${
+          <img src="https://openweathermap.org/img/wn/${
             forecast.weather[0].icon
           }@2x.png" class="weather-forecast-icons">
           <div class="weather-forecast-temperature">
